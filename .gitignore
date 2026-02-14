@@ -1,1 +1,12 @@
+# Ignore the raw IEP data
+*.pdf
 
+# Ignore the Word Twister dictionary
+*.csv
+*.xlsx
+
+# Ignore system/environment files
+__pycache__/
+.ipynb_checkpoints/
+.env
+.DS_Store
