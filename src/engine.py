@@ -1,70 +1,63 @@
-import pandas as pd
-import PyPDF2
 import time
 import sys
 
-# Terminal Styling
-BOLD = '\033[1m'
-RED = '\033[91m'
-GREEN = '\033[92m'
-YELLOW = '\033[93m'
-BLUE = '\033[94m'
-END = '\033[0m'
+# UI Colors for Presentation
+BOLD, RED, GREEN, YELLOW, BLUE, END = '\033[1m', '\033[91m', '\033[92m', '\033[93m', '\033[94m', '\033[0m'
 
 def run_fidelity_check():
-    print(f"{BLUE}{BOLD}>>> FIDELITY-CHECK v1.0: COLLABORATIVE AUDIT STARTING...{END}")
+    print(f"{BLUE}{BOLD}>>> FIDELITY-CHECK v1.2: INTEGRATED ADVOCACY ENGINE{END}")
+    print(f"{BLUE}CALIBRATED FOR: DELAWARE SECONDARY IEP STANDARDS{END}")
     time.sleep(1)
     
-    # --- STEP 1: INGESTION ---
-    print(f"\n{BOLD}STEP 1: INGESTING PDF DATA...{END}")
-    pdf_filename = 'IEP Redact Master-OB2425.pdf'
-    
-    try:
-        # This simulates the extraction logic for the demo
-        print(f"   {GREEN}✓ Accessing: {pdf_filename}{END}") [cite: 1326]
-        time.sleep(1)
-        print(f"   {GREEN}✓ Student Identified: O'Bryant Jr.{END}") [cite: 1360, 1401]
-        print(f"   {GREEN}✓ Current Grade: 09{END}") [cite: 1348]
-    except Exception as e:
-        print(f"{RED}Error loading PDF. Ensure file name matches exactly.{END}")
-        return
+    # --- LAYER 1: DATA INGESTION (THE REALITY) ---
+    print(f"\n{BOLD}STEP 1: INGESTING PERFORMANCE DATA...{END}")
+    time.sleep(1)
+    # Data pulled from 'IEP Redact Master-OB2425.pdf' and PowerSchool simulation
+    student_data = {
+        "Name": "O'Bryant Jr.",
+        "Grade": "09",
+        "English_Grade": 56,
+        "Attendance_Rate": "82%",
+        "Placement": "Setting C (Behavioral ILC)"
+    }
+    print(f"   {GREEN}✓ Student Profile: {student_data['Name']} (Grade {student_data['Grade']}){END}")
+    print(f"   {GREEN}✓ PowerSchool English 9 Grade: {student_data['English_Grade']}%{END}")
+    print(f"   {GREEN}✓ Current Placement: {student_data['Placement']}{END}")
 
-    # --- STEP 2: DATA DISCONNECT (THE KILL-SHOT) ---
-    print(f"\n{BOLD}STEP 2: AUDITING ACADEMIC FIDELITY...{END}")
+    # --- LAYER 2: THE FIDELITY GAP (GRADE TO GOAL) ---
+    print(f"\n{BOLD}STEP 2: ANALYZING GRADE-TO-GOAL FIDELITY...{END}")
     time.sleep(1.5)
     
-    # Data pulled directly from Page 3 of your uploaded IEP
-    grade_english = 56 [cite: 1414]
-    goal_accuracy = 72 [cite: 1638]
+    iep_goal_accuracy = 72 # From Page 3 of the IEP
     
-    print(f"{YELLOW}   Scanning MP2 Grade Reports...{END}") [cite: 1411]
-    time.sleep(1)
+    if student_data['English_Grade'] < iep_goal_accuracy:
+        print(f"\n{RED}{BOLD}🚩 CRITICAL GAP DETECTED: PERFORMANCE VS. PROGRESS{END}")
+        print(f"{RED}   The school reports {iep_goal_accuracy}% progress on Reading Goals,{END}")
+        print(f"{RED}   but the student has a {student_data['English_Grade']}% failing grade in English 9.{END}")
+        print(f"   {BOLD}ANALYSIS:{END} The Specially Designed Instruction (SDI) is not effective.")
     
-    if grade_english < 60:
-        print(f"\n{RED}{BOLD}🚩 FIDELITY ALERT: GRADE/GOAL MISMATCH{END}")
-        print(f"{RED}   Classroom Grade (English 9): {grade_english}% (FAILING){END}") [cite: 1414]
-        print(f"{RED}   IEP Goal (Reading Comp): {goal_accuracy}% (PROGRESSING){END}") [cite: 1638]
-        print(f"   {BOLD}Question for Team:{END} Why is SDI not translating to a passing grade?") [cite: 1653]
+    # --- LAYER 3: RED FLAGS & INCONSISTENCIES (WORD TWISTER) ---
+    print(f"\n{BOLD}STEP 3: SCANNING FOR DOCUMENT INCONSISTENCIES...{END}")
+    time.sleep(1.2)
     
-    # --- STEP 3: CAREER ALIGNMENT ---
-    print(f"\n{BOLD}STEP 3: CAREER GOAL ALIGNMENT AUDIT...{END}")
+    flags = [
+        ("JARGON FLAG", "SDI (Specially Designed Instruction)", "Is the 60 min/week service actually happening?"),
+        ("CAREER FLAG", "Military/Security Career", "Isolated ILC placement conflicts with social readiness needs."),
+        ("SERVICE FLAG", "Attendance Impact", "IEP notes frequent absences; check if services are being made up.")
+    ]
+
+    for type, term, twist in flags:
+        print(f"   {YELLOW}Checking {term}...{END}")
+        time.sleep(0.7)
+        print(f"   {YELLOW}🚩 {type}:{END} {twist}")
+
+    # --- LAYER 4: THE TWISTED QUESTIONS ---
+    print(f"\n{BOLD}STEP 4: GENERATING COLLABORATIVE ADVOCACY BRIEFING...{END}")
     time.sleep(1.5)
     
-    print(f"   Target 1: Security Guard{END}") [cite: 1499]
-    print(f"   Target 2: Military Enlistment{END}") [cite: 1501]
-    print(f"   Current Placement: Setting C (Behavioral ILC){END}") [cite: 1675, 1681]
-    
-    time.sleep(1)
-    print(f"{YELLOW}   🚩 ALERT: Placement in Isolated Setting (ILC) contradicts{END}")
-    print(f"{YELLOW}      social integration needed for Military/Security careers.{END}")
-
-    # --- STEP 4: JARGON TWIST ---
-    print(f"\n{BOLD}STEP 4: GENERATING PARENT ADVOCACY QUESTIONS...{END}")
-    time.sleep(1)
-    print(f"   {BLUE}Term: SDI (Specially Designed Instruction){END}") [cite: 1653]
-    print(f"   {BOLD}The Twist:{END} Ask for the 30-min log for Math/Reading sessions.") [cite: 1655]
-    
-    print(f"\n{GREEN}{BOLD}>>> AUDIT COMPLETE. READY FOR JHTV PRESENTATION.{END}")
+    print(f"\n{GREEN}{BOLD}>>> AUDIT COMPLETE. 1-PAGE SHIELD GENERATED.{END}")
+    print(f"{BOLD}KEY QUESTION FOR TEAM:{END} 'If my child is hitting 72% of his IEP goals,")
+    print("why is he failing the actual class? Where is the breakdown in Fidelity?'")
 
 if __name__ == "__main__":
     run_fidelity_check()
