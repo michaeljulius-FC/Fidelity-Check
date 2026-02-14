@@ -3,7 +3,7 @@
 > **"Bridging the gap between school-system compliance and student-centered outcomes."**
 
 ## 📖 Project Vision
-In the current Special Education landscape, "Fidelity" is often treated as a legal checkbox. The **Fidelity-Check** reclaims that word for parents. It is a logic-driven auditor designed to ensure that the promises made in an Individualized Education Program (IEP) align with the student's actual classroom performance and future career goals.
+In the United States, approximately **14.5 million students** are supported by Individualized Education Programs (IEPs). For their families, "Fidelity" is often a legal abstraction—a checkbox for school compliance. **Fidelity-Check** reclaims that word for parents. It is a logic-driven auditor designed to ensure that the promises made in an Individualized Education Program (IEP) align with the student's actual classroom performance and future career goals.
 
 ## 🚀 Key Features
 This MVP demonstrates three core capabilities of the Collaborative Fidelity framework:
@@ -18,17 +18,13 @@ The engine is built on a "Logic Bridge" architecture:
 - **Ingestion:** Extracts raw data from IEP PDFs.
 - **Cross-Referencing:** Matches document strings against the `Word_Twister` dictionary.
 - **Flagging:** Triggers "Red Flags" when data points contradict student needs.
+- **Language:** Python 3.10+
+- **Libraries:** Pandas (Logic Processing), PyPDF2 (Data Ingestion)
 
-
-
-## 📦 Getting Started
-To run the Fidelity Audit simulation:
-1. Clone this repository.
-2. Ensure dependencies are installed: `pip install -r requirements.txt`.
-3. Run the engine: `python src/engine.py`.
 
 ## 🔒 Data Fidelity & Privacy
 This project adheres to strict **Data Fidelity** principles. To ensure FERPA and HIPAA compliance, no PII (Personally Identifiable Information) or raw IEP documents are stored in this public repository. The engine is designed to run in secure, local environments.
 
----
 **Developed as part of the Effort for Collaborative Fidelity.**
+
+
