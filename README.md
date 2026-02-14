@@ -1,9 +1,9 @@
-# 🌪️ Fidelity Engine: Collaborative Fidelity Auditor (MVP)
+# 🌪️ Fidelity-Check: Collaborative Fidelity Auditor (MVP)
 
 > **"Bridging the gap between school-system compliance and student-centered outcomes."**
 
 ## 📖 Project Vision
-In the current Special Education landscape, "Fidelity" is often treated as a legal checkbox. The **Fidelity Engine** reclaims that word for parents. It is a logic-driven auditor designed to ensure that the promises made in an Individualized Education Program (IEP) align with the student's actual classroom performance and future career goals.
+In the current Special Education landscape, "Fidelity" is often treated as a legal checkbox. The **Fidelity-Check** reclaims that word for parents. It is a logic-driven auditor designed to ensure that the promises made in an Individualized Education Program (IEP) align with the student's actual classroom performance and future career goals.
 
 ## 🚀 Key Features
 This MVP demonstrates three core capabilities of the Collaborative Fidelity framework:
